@@ -39,7 +39,13 @@ plt.show()
 ```
 
 ### Brain Visualization Samples
-![](/images/sample_1.png)
+<p float="left">
+  <img src="images/sample_1.png" width="300" />
+  <img src="images/sample_2.png" width="300" />
+  <img src="images/sample_3.png" width="300" />
+</p>
+
+
 
 ### Overall Purpose
 The code's primary purpose is to load a 3D mesh from a .PLY file and visualize it using both the built-in viewer from trimesh and matplotlib.
