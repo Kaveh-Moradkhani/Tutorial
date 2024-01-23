@@ -1,6 +1,6 @@
 ## Introduction to Docker, Image, and Container
 
-### Docker:
+### Docker
 Docker is a platform that enables the packaging, distribution, and execution of applications within isolated environments called containers. Containers encapsulate an application and its dependencies, ensuring consistent and reliable execution across various computing environments.
 
 ### Docker Image
