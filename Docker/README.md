@@ -223,7 +223,7 @@ $ docker volume rm mymol
 
 ### Running Containers with Volumes
 #### Run MongoDB container with multiple volumes
-- Starts a detached MongoDB container named C2-mongo with two volumes (mongo_config and mongo_db)
+- Starts a detached `MongoDB` container named C2-mongo with two volumes (`mongo_config` and `mongo_db`)
 ```
 $ docker run -d --name C2-mongo -v mongo_config:/data/configdb -v mongo_db:/data/db_mongo mongo
 ```
