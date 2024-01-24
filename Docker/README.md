@@ -60,7 +60,7 @@ $ docker run -d --name C1 redis
 ```
 - Stop a running container
 ```
-  $ docker container stop C1
+$ docker container stop C1
 ```
 - Start a stopped container
 ```
@@ -108,6 +108,33 @@ $ docker stats
 ```
 $ docker container top C-redis
 ```
+- List all containers with size
+```
+$ docker ps -s
+
+```
+- List all containers, including stopped ones
+```
+$ docker ps -as
+```
+- Run Redis container in read-only mode
+```
+$ docker run --name C-redis-2 --read-only redis
+```
+- Remove a container and its associated volumes
+```
+$ docker rm -v C-redis-2
+```
+- Run Redis container with a named volume
+```
+$ docker run -d --name new-redis -v myvol:/mydata redis
+```
+- Forcefully remove a container along with its associated volumes
+```
+$ docker rm --force -v new-redis
+```
+
+
 #### Executing Commands in Containers 
 - Execute a command in a running container
 ```
@@ -167,6 +194,16 @@ $ docker-compose up -d
 ```
 $ docker-compose down
 ```
+#### Run containers defined in a Docker Compose file
+- Starts containers defined in the specified docker-compose.yml file in detached mode
+```
+$ docker-compose -f docker-compose.yml up -d
+```
+#### Stop and remove containers defined in a Docker Compose file
+- Stops and removes containers defined in the `docker-compose.yml` file
+```
+$ docker-compose down
+```
 ### Docker Volume Management
 #### Inspect Docker Volume
 - Displays detailed information about a Docker volume, including its mount point and configuration
@@ -178,6 +215,24 @@ $ docker volume inspect volume-name
 ```
 $ docker volume prune
 ```
+#### Remove a specific volume
+- Removes the volume named mymol
+```
+$ docker volume rm mymol
+```
+
+### Running Containers with Volumes
+#### Run MongoDB container with multiple volumes
+- Starts a detached MongoDB container named C2-mongo with two volumes (mongo_config and mongo_db)
+```
+$ docker run -d --name C2-mongo -v mongo_config:/data/configdb -v mongo_db:/data/db_mongo mongo
+```
+#### Run Redis container with a read-only volume
+- Starts a detached Redis container named C1 with a read-only volume (v1)
+```
+$ docker run -d --name C1 -v v1:/mydata:ro redis
+```
+
 ### Docker Swarm (For Orchestration)
 #### Initialize Docker Swarm
 - Initiates a Docker Swarm, enabling features for container orchestration
