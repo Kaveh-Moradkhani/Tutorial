@@ -23,7 +23,8 @@ Transferring libraries from one Anaconda installation to another on a different 
 - Place the `environment.yml` file in a directory on the new system.
 - Open Anaconda Prompt or terminal.
 - Navigate to the directory where `environment.yml` is located.
-- Create the environment using the YAML file: `conda env create -f environment.yml`. This will set up an environment with all the libraries and specific versions from the original machine.
+- Create the environment using the YAML file: `conda env create -f environment.yml -n desired_env_name
+`. This will set up an environment with all the libraries and specific versions from the original machine.
 
 ### Points to Consider:
 - **Platform Differences:** If the source and target systems have different operating systems (e.g., Windows to Linux), there might be compatibility issues with certain packages. In that case, you may need to manually adjust the environment.yml file.
